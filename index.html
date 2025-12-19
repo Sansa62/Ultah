@@ -87,9 +87,10 @@ button:hover{transform:scale(1.05);background:#e63950}
 <body>
 
 <!-- 🎵 MUSIK -->
-<audio id="music" autoplay loop>
+<audio id="music" loop>
     <source src="lagu.mp3" type="audio/mpeg">
 </audio>
+
 
 <!-- ❤️ LOVE ANIMATION -->
 <script>
@@ -115,7 +116,7 @@ for(let i=0;i<25;i++){
 
         <p id="typing"></p>
 
-        <button onclick="nextPage()">Buka Senggg 🎁</button>
+        <button onclick="startMusic()">Buka Senggg 🎁</button>
     </div>
 </div>
 
@@ -169,6 +170,14 @@ function nextPage(){
     document.getElementById("page2").classList.add("active");
 }
 </script>
-
+<script>
+function startMusic(){
+    const music = document.getElementById("music");
+    music.play().catch(err => {
+        console.log("Audio gagal diputar:", err);
+    });
+    nextPage();
+}
+</script>
 </body>
 </html>
